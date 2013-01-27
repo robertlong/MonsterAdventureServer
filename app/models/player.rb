@@ -8,10 +8,11 @@ class Player
   embeds_many :player_monsters
   field :last_location, :type => Array # Last player location
   field :last_location_time, type: DateTime, default: Time.now
+  #validates_uniqueness :uuid, :username
 
   validates_presence_of :uuid, :username, :gender, :last_location
-  validates_uniqueness_of :uuid, :username
 
   attr_accessible :uuid, :username, :items, :gender, :last_location, :last_location_time
+  accepts_nested_attributes_for :player_monsters
 
 end

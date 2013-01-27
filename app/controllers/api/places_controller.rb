@@ -10,9 +10,6 @@ class Api::PlacesController < ApplicationController
 
   def show
     @place = Place.all
-    @place.each do |p|
-      p.id
-    end
     render :json => @place, :status => 200
   end
 

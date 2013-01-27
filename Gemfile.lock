@@ -56,8 +56,6 @@ GEM
       coderay (>= 1.0.0)
       erubis (>= 2.7.0)
     binding_of_caller (0.6.8)
-    bootstrap-sass (2.2.2.0)
-      sass (~> 3.2)
     bourbon (3.0.1)
       sass (>= 3.2.0)
       thor
@@ -209,6 +207,7 @@ GEM
     sendgrid (1.1.0)
       json
       json
+    skeleton-rails (0.0.2)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -241,7 +240,6 @@ DEPENDENCIES
   activeadmin-mongoid!
   better_errors (>= 0.3.2)
   binding_of_caller (>= 0.6.8)
-  bootstrap-sass (>= 2.2.2.0)
   capybara (>= 2.0.2)
   coffee-rails (~> 3.2.1)
   devise (>= 2.2.2)
@@ -258,5 +256,6 @@ DEPENDENCIES
   rspec-rails (>= 2.12.2)
   sass-rails (~> 3.2.3)
   sendgrid (>= 1.0.1)
+  skeleton-rails
   thin (>= 1.5.0)
   uglifier (>= 1.0.3)

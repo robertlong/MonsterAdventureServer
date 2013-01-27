@@ -15,7 +15,7 @@ gem 'mongoid_geospatial'
 gem "mongoid-rspec", ">= 1.5.6", :group => :test
 gem "email_spec", ">= 1.4.0", :group => :test
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
-gem "bootstrap-sass", ">= 2.2.2.0"
+gem 'skeleton-rails'
 gem "sendgrid", ">= 1.0.1"
 gem "devise", ">= 2.2.2"
 gem 'activeadmin-mongoid', :git => 'git://github.com/Ostrzy/activeadmin-mongoid.git', :branch => 'filter_support'

@@ -18,25 +18,23 @@ class Api::PlayersController < ApplicationController
   # POST Params
   # - uuid
   # - username
-  def create
-    puts params.as_json
-    @player = Player.new(params[:player])
-    puts "yup"
-    @player.last_location = params[:player][:location]
-    puts "fuck"
-    @player.player_monsters.build({
-                                      :nickname => params[:player][:starting_monster][:nickname],
-                                      :monster_id => params[:player][:starting_monster][:id],
-                                      :caught_location => params[:player][:location]
-                                  })
-    puts "cunt"
 
+  def create
+    json = ActiveSupport::JSON.decode(params[:player])
+    @player = Player.new
+    @player.gender = json["gender"]
+    @player.username = json["username"]
+    @player.uuid = json["uuid"]
+    @player.last_location = json["location"]
+    @player.player_monsters = [ PlayerMonster.new({   :nickname => json["starting_monster"]["nickname"],
+                                                      :monster_id => json["starting_monster"]["id"],
+                                                      :caught_location => json["location"]
+                                                 }) ]
     if @player.save
-      render :json => { :success => true, :player => @player } , :status => 300
+      render :json => { :success => true, :player => @player } , :status => 200
     else
       render :json => { :success => false, :message => @player.errors } , :status => 400
     end
-    puts "fuckin fuck fuck fuck fikity fuck"
   end
 
   # PUT /api/players/1.json
@@ -53,7 +51,7 @@ class Api::PlayersController < ApplicationController
     @player = Player.where(:uuid => params[:uuid]).first
 
     if @player.update_attributes(params[:player])
-      render :json => { :success => true, :player => @player }
+      render :json => { :success => true, :player => @player } , :status => 200
     else
       render :json => { :success => false, :message => @player.errors } , :status => 400
     end
