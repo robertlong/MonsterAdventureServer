@@ -157,19 +157,20 @@ body{
 .container{
   min-height: 100%;
   background-color: #ccc87d;
+  background-image: url("background.png");
 }
 
 .iphone{
-  width: 350px;
-  height: 546px;
-  margin: auto;
+  width: 300px;
+  height: 468px;
+  margin: 0 120px;
   background-image: url("iphone.png");
 }
 
 .android{
-  width: 350px;
-  height: 525px;
-  margin: 21px auto;
+  width: 300px;
+  height: 501px;
+  margin: 14px -21px;
   background-image: url("android.png");
 }
 
@@ -178,4 +179,16 @@ body{
   height: 175px;
   width: 475px;
   background-image: url("banner.png");
+}
+
+.pitch{
+  outline: black 1px;
+  color: white;
+  font-size: 21px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.soon{
+  font-size: 30px;
 }
