@@ -69,7 +69,7 @@ development:
 test:
   sessions:
     default:
-      database: monster_adventure_server_test
+      database: monster_adventure_server_development
       hosts:
         - localhost:27017
       options:
